@@ -82,6 +82,9 @@ def run_flask():
 
 # --- Main Bot Loop ---
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)   
+
     print("Bot is starting... Press Ctrl+C to stop.")
     try:
         # This function starts the bot and keeps it running
