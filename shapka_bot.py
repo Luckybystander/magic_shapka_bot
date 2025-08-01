@@ -5,7 +5,7 @@ import os
 # --- IMPORTANT ---
 # Replace 'YOUR_BOT_TOKEN_HERE' with the token you get from BotFather on Telegram.
 # KEEP YOUR BOT TOKEN SECRET!
-BOT_TOKEN = '8467562128:AAFOkx37i4U6UDsz3Muhrz_9OuBn5XN8oRU'
+BOT_TOKEN = 'key'
 
 # Initialize the bot with your token
 bot = telebot.TeleBot(BOT_TOKEN)
