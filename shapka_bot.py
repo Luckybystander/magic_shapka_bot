@@ -80,16 +80,21 @@ def run_flask():
     app.run(host="0.0.0.0", port=port)
 
 
+
 # --- Main Bot Loop ---
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)   
+    def start_bot():
+        print("Bot is starting... Press Ctrl+C to stop.")
+        try:
+            bot.polling(none_stop=True)
+        except Exception as e:
+            print(f"An error occurred while polling the bot: {e}")
 
-    print("Bot is starting... Press Ctrl+C to stop.")
-    try:
-        # This function starts the bot and keeps it running
-        bot.polling(none_stop=True)
-    except Exception as e:
-        print(f"An error occurred while polling the bot: {e}")
+    # Start bot polling in a separate thread
+    threading.Thread(target=start_bot).start()
+
+    # Start Flask app
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 
