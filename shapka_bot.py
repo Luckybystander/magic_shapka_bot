@@ -1,6 +1,9 @@
 import telebot
 import random
 import os
+from flask import Flask
+import threading
+
 
 # --- IMPORTANT ---
 # Replace 'YOUR_BOT_TOKEN_HERE' with the token you get from BotFather on Telegram.
@@ -64,6 +67,18 @@ def send_combination(message):
 
     # Reply to the user with the result
     bot.reply_to(message, combined_phrase)
+
+# --- Flask Server Setup ---
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Shapka Bot is running!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 
 # --- Main Bot Loop ---
 if __name__ == '__main__':
