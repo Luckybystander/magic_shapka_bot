@@ -59,8 +59,8 @@ def send_combination(message):
     """
     # Define the paths to your word files
     # Make sure these files are in the same directory as this script.
-    file_one = 'adjectives.txt' # Example file name
-    file_two = 'nouns.txt'      # Example file name
+    file_one = 'adjectivesV2' # Example file name
+    file_two = 'nounsV2'      # Example file name
 
     # Generate the combined phrase
     combined_phrase = combine_words(file_one, file_two)
