@@ -52,7 +52,7 @@ def start_handler(message):
 @bot.message_handler(commands=["ask"])
 def ask_handler(message):
     adjective = random_line("adjectivesV2")
-    noun = random_line("nounsV2")
+    noun = random_line("nounsV3")
     bot.reply_to(message, f"{adjective} {noun}")
 
 # -------------------------------------------------
